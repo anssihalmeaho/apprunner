@@ -429,7 +429,7 @@ via **appval**.
 
 Values are identified by names (string) and by tokens (string).
 
-Token forms it's own namespace for name-value pairs.
+Token forms its own namespace for name-value pairs.
 
 #### setval
 
