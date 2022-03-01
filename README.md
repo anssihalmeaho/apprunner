@@ -386,3 +386,64 @@ curl http://localhost:8080/app
 []
 ```
 
+## Extensions
+
+There is possibility to add extension modules to be built-in to **apprunner**.
+
+Extension modules are such that app's can import and use those without giving those as part of package as those are part of apprunner -executable.
+
+It's easy to add new extensions without need for modifying other code.
+
+### Go extension modules
+
+There are extension modules implemented with Go.
+
+Those register themselves in **init** -function by using **funl.AddExtensionInitializer**
+(which actually stores actual initializer function).
+
+No modification for other apprunner code is needed when Go extension is added.
+
+### FunL extension module
+
+Extension modules implemented with **FunL** are done just by adding FunL source file (with extension **.fnl**) to **extensions** -directory.
+
+Source codes are embedded to executable (by using Go's file embedding) and parsed when apprunner starts.
+
+### List of extensions
+
+Currently there are following extensions:
+
+name | type | description
+---- | ---- | -----------
+appval | Go | see explanation later
+valuez | Go | https://github.com/anssihalmeaho/fuvaluez
+fields | FunL | https://github.com/anssihalmeaho/fields
+httprouter | FunL | https://github.com/anssihalmeaho/httprouter
+
+### appval -extension
+
+Module **appval** is used for sharing FunL -values between separate app's.
+
+For example, communication via channels can be done by sharing channels
+via **appval**.
+
+Values are identified by names (string) and by tokens (string).
+
+Token forms it's own namespace for name-value pairs.
+
+#### setval
+
+Writes value by given token and name:
+
+```
+call(appval.setval <token:string> <name:string> <value>) -> true (bool)
+```
+
+#### getval
+
+Reads value by given token and name:
+
+```
+call(appval.getval <token:string> <name:string>) -> list(<found:bool> <value>)
+```
+
