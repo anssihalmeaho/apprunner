@@ -7,4 +7,7 @@ require (
 	go.etcd.io/bbolt v1.3.6
 )
 
-require golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d // indirect
+require (
+	github.com/anssihalmeaho/fuvaluez v0.0.0-20211108180852-0b22e7f3e27a // indirect
+	golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d // indirect
+)

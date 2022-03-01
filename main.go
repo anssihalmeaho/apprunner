@@ -3,6 +3,7 @@ package main
 import (
 	"apprunner/codeserver"
 	"apprunner/executor"
+	"apprunner/extensions"
 	"context"
 	"flag"
 	"fmt"
@@ -13,6 +14,8 @@ import (
 )
 
 func main() {
+	extensions.CallMe()
+
 	serviceName := os.Args[0]
 
 	portPtr := flag.String("port", "8080", "Port number for input")
