@@ -419,6 +419,9 @@ appval | Go | see explanation later
 valuez | Go | https://github.com/anssihalmeaho/fuvaluez
 fields | FunL | https://github.com/anssihalmeaho/fields
 httprouter | FunL | https://github.com/anssihalmeaho/httprouter
+mzqbro | Go | https://github.com/anssihalmeaho/mzq
+mzqque | Go | https://github.com/anssihalmeaho/mzq
+mzqmsg | Go | https://github.com/anssihalmeaho/mzq
 
 ### appval -extension
 
